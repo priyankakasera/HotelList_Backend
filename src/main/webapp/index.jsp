@@ -1,0 +1,1 @@
+<a href="./hotel/list">LIST</a>
