@@ -15,7 +15,7 @@ public class JsonConvert {
 		Gson gson = new Gson();
 		String json = gson.toJson(emp);
 		System.out.println(json);
-		return "{\"data\":"+json+"}";
+		return "{\"answer\":"+json+"}";
 	}
 	
 	public static Object deserializeToJson(String object,Class<?> clazz){
