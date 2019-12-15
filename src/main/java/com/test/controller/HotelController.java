@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,6 +15,7 @@ import com.test.service.HotelService;
 import com.test.utility.JsonConvert;
 
 @Controller
+@CrossOrigin(origins = "*")
 @RequestMapping("/hotel")
 public class HotelController {
 	@Autowired
@@ -26,6 +28,7 @@ public class HotelController {
 	public String getList() {
 		List<HotelList> list = this.hotelService.getList();
 		String result = jsonConverter.toJson(list);
+		System.out.println(result);
 		return result;
 	}
 }
