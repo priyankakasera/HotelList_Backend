@@ -14,8 +14,8 @@ import com.test.dto.HotelList;
 import com.test.service.HotelService;
 import com.test.utility.JsonConvert;
 
+@CrossOrigin(origins = "https://hotellistfrontend.herokuapp.com/*")
 @Controller
-@CrossOrigin(origins = "*")
 @RequestMapping("/hotel")
 public class HotelController {
 	@Autowired
