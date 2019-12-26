@@ -14,7 +14,7 @@ import com.test.dto.HotelList;
 import com.test.service.HotelService;
 import com.test.utility.JsonConvert;
 
-@CrossOrigin()
+@CrossOrigin
 @Controller
 @RequestMapping("/hotel")
 public class HotelController {
@@ -23,6 +23,7 @@ public class HotelController {
 	@Autowired
 	JsonConvert jsonConverter;
 	
+	@CrossOrigin
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	@ResponseBody
 	public String getList() {
