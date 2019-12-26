@@ -23,7 +23,7 @@ public class HotelController {
 	@Autowired
 	JsonConvert jsonConverter;
 	
-	@CrossOrigin
+	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	@ResponseBody
 	public String getList() {
