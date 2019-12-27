@@ -2,6 +2,8 @@ package com.test.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +18,10 @@ public class HotelService {
 	
 	public List<HotelList> getList() {
 		return this.hotelDao.getList();
+	}
+	
+	@Transactional
+	public void addVehicle(HotelList list) {
+		this.hotelDao.addVehicle(list);
 	}
 }

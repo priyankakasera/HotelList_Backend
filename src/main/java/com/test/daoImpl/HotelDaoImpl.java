@@ -20,4 +20,8 @@ public class HotelDaoImpl implements HotelDao {
 		 list=hibernateTemplate.loadAll(HotelList.class);  
 		 return list;  
 	}
+	
+	public void addVehicle(HotelList list) {
+		hibernateTemplate.save(list);
+	}
 }
