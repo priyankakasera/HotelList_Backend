@@ -9,4 +9,5 @@ import com.test.dto.HotelList;
 public interface HotelDao {
 	public List<HotelList> getList();
 	public void addVehicle(HotelList list);
+	
 }

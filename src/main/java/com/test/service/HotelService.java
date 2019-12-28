@@ -23,5 +23,7 @@ public class HotelService {
 	@Transactional
 	public void addVehicle(HotelList list) {
 		this.hotelDao.addVehicle(list);
+		
 	}
+	
 }

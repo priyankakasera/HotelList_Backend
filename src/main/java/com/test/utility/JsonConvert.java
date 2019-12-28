@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 
 import com.test.dto.HotelList;
 
+
 @Component
 public class JsonConvert {
 	

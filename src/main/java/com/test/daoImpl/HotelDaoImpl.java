@@ -24,4 +24,5 @@ public class HotelDaoImpl implements HotelDao {
 	public void addVehicle(HotelList list) {
 		hibernateTemplate.save(list);
 	}
+	
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,11 +28,12 @@ public class HotelController {
 	JsonConvert jsonConverter;
 	
 	
+	
 	@RequestMapping(value="/list",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public String getList() {
 		List<HotelList> list = this.hotelService.getList();
-		String result = jsonConverter.toJson(list);
+		String result = this.jsonConverter.toJson(list);
 		System.out.println(result);
 		return result;
 	}
@@ -43,4 +45,6 @@ public class HotelController {
 		HotelList list = (HotelList) JsonConvert.deserializeToJson(request, HotelList.class);
 		this.hotelService.addVehicle(list);
 	}
+	
+	
 }
