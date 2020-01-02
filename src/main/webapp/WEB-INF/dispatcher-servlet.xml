@@ -33,6 +33,7 @@
 	
 	
 	
+	
 	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	  <property name="driverClassName" value="org.postgresql.Driver" />  
 	  <property name="url" value="jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d6i5sojoe034d5?sslmode=require" />  

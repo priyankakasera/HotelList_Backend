@@ -4,6 +4,7 @@ package com.test.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -47,7 +48,15 @@ public class HotelController {
 	public String addVehicle(@RequestBody String request) {
 		System.out.println(request);
 		HotelList list = (HotelList) JsonConvert.deserializeToJson(request, HotelList.class);
-		StatusResponse sr = (StatusResponse) this.hotelService.addVehicle(list);
+		StatusResponse sr;
+		try {
+		sr = (StatusResponse) this.hotelService.addVehicle(list);
+		
+		}catch(DataIntegrityViolationException e) {
+			sr = new StatusResponse();
+			sr.setMessage("Duplicate Id");
+			sr.setStatus(409);
+		}
 		Gson gson = new Gson();
 		String json = gson.toJson(sr);
 		System.out.println(json);
